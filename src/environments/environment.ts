@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyArDRzACfxD7Y_jqHQz6yEsmM7f-7-xFys',
-    authDomain: 'location-tracker-288909.firebaseapp.com',
-    databaseURL: 'https://location-tracker-288909.firebaseio.com',
-    projectId: 'location-tracker-288909',
-    storageBucket: 'location-tracker-288909.appspot.com',
-    messagingSenderId: '329261519',
-    appId: '1:329261519:web:0e3f52ad256306ad78f2ba',
-    measurementId: 'G-X7RM2PJ3HD',
+    apiKey: 'AIzaSyAUuKWtWbqZsuCY1IrPhxe5E-pkq6yW65Q',
+    authDomain: 'location-tracker-c7d82.firebaseapp.com',
+    databaseURL: 'https://location-tracker-c7d82.firebaseio.com',
+    projectId: 'location-tracker-c7d82',
+    storageBucket: 'location-tracker-c7d82.appspot.com',
+    messagingSenderId: '402572747111',
+    appId: '1:402572747111:web:9937a9fcd7dcc1b97e8fc2',
+    // measurementId: 'G-X7RM2PJ3HD',
   },
 };
 
@@ -23,4 +23,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.zz

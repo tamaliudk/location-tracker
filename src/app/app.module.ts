@@ -5,6 +5,8 @@ import { AgmCoreModule } from '@agm/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,9 +17,10 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyArDRzACfxD7Y_jqHQz6yEsmM7f-7-xFys',
+      apiKey: 'AIzaSyAUuKWtWbqZsuCY1IrPhxe5E-pkq6yW65Q',
     }),
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

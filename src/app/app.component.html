@@ -10,4 +10,13 @@
       </h3>
     </agm-info-window>
   </agm-marker>
+  <agm-marker *ngFor="let marker of markers" [latitude]="marker.location[0]" [longitude]="marker.location[1]">
+
+    <agm-info-window>
+      <h3>
+        {{marker.distance}}
+      </h3>
+    </agm-info-window>
+
+  </agm-marker>
 </agm-map>
