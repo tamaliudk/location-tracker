@@ -8,7 +8,7 @@ export class LocationService {
   constructor(private firestore: AngularFirestore) {}
 
   // tslint:disable-next-line:typedef
-  getLocation() {
+  getLocations() {
     return this.firestore.collection('location').snapshotChanges();
   }
 }

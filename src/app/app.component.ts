@@ -1,6 +1,7 @@
 // import { GeoService } from './geo.service';
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from './location.service';
+import { Location } from './location.model';
 
 @Component({
   selector: 'app-root',
@@ -9,27 +10,26 @@ import { LocationService } from './location.service';
 })
 export class AppComponent implements OnInit {
   title = 'location-tracker';
-  lat: number;
-  lng: number;
+  lat: number = 7.055900;
+  lng: number = 79.88;
 
   markers: any;
-  locations: any[];
+  locations: Location[];
 
   constructor(private locationService: LocationService) {}
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    // this.getUserLocation();
-    console.log('firebase');
-    this.locationService.getLocation().subscribe((data) => {
-      console.log('dataa', data);
-      this.locations = data.map((e) => {
-        console.log('eeeeeeeee', e.payload.doc.data());
-        this.lat = e.payload.doc.data()[0];
-        this.lng = e.payload.doc.data()[1];
-        console.log(e.payload.doc);
-      });
+    this.locationService.getLocations().subscribe(data => {
+      this.locations = data.map(e => {
+        return {
+          id: e.payload.doc.id,
+          latitude : e.payload.doc.data()[0],
+          longitude: e.payload.doc.data()[1]
+        }as Location;
+      })
     });
+    
   }
 
   // tslint:disable-next-line:typedef
