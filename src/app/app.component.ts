@@ -22,11 +22,11 @@ export class AppComponent implements OnInit {
     this.getUserLocation();
     console.log('firebase');
     this.locationService.getLocation().subscribe((data) => {
+      console.log('dataa', data);
       this.locations = data.map((e) => {
-        console.log('eeeeeeeee', e);
+        console.log('eeeeeeeee', e.payload.doc.data());
       });
     });
-    // this.geo.hits.subscribe((hits) => (this.markers = hits));
   }
 
   // tslint:disable-next-line:typedef

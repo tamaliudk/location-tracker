@@ -9,6 +9,6 @@ export class LocationService {
 
   // tslint:disable-next-line:typedef
   getLocation() {
-    return this.firestore.collection('location1').snapshotChanges();
+    return this.firestore.collection('location').snapshotChanges();
   }
 }
