@@ -19,12 +19,15 @@ export class AppComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.getUserLocation();
+    // this.getUserLocation();
     console.log('firebase');
     this.locationService.getLocation().subscribe((data) => {
       console.log('dataa', data);
       this.locations = data.map((e) => {
         console.log('eeeeeeeee', e.payload.doc.data());
+        this.lat = e.payload.doc.data()[0];
+        this.lng = e.payload.doc.data()[1];
+        console.log(e.payload.doc);
       });
     });
   }
