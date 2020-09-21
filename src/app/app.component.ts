@@ -10,8 +10,8 @@ import { Location } from './location.model';
 })
 export class AppComponent implements OnInit {
   title = 'location-tracker';
-  lat: number = 0;
-  lng: number = 0;
+  lat: number = 6.799154;
+  lng: number = 79.9;
   date: string = "";
   time: string = "";
 
