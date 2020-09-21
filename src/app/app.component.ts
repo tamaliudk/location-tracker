@@ -10,8 +10,10 @@ import { Location } from './location.model';
 })
 export class AppComponent implements OnInit {
   title = 'location-tracker';
-  lat: number = 7.055900;
-  lng: number = 79.88;
+  lat: number = 6.799154;
+  lng: number = 79.9;
+  date: string = "";
+  time: string = "";
 
   markers: any;
   locations: Location[];
@@ -21,11 +23,15 @@ export class AppComponent implements OnInit {
   // tslint:disable-next-line:typedef
   ngOnInit() {
     this.locationService.getLocations().subscribe(data => {
+      console.log("location data", data);
       this.locations = data.map(e => {
+        this.time = e.payload.doc.data()["time"];
+        this.date = e.payload.doc.data()["date"];
         return {
           id: e.payload.doc.id,
           latitude : e.payload.doc.data()[0],
-          longitude: e.payload.doc.data()[1]
+          longitude: e.payload.doc.data()[1],
+
         }as Location;
       })
     });
