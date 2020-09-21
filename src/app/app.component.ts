@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   lng: number = 79.9;
   date: string = "";
   time: string = "";
+  d: Date;
 
   markers: any;
   locations: Location[];
@@ -27,9 +28,10 @@ export class AppComponent implements OnInit {
       this.locations = data.map(e => {
         this.time = e.payload.doc.data()["time"];
         this.date = e.payload.doc.data()["date"];
+        
         this.lat = e.payload.doc.data()[0];
         this.lng = e.payload.doc.data()[1];
-        var d = new Date(this.date +'T'+ this.time + 'Z');
+        this.d = new Date(this.date +'T'+ this.time + 'Z');
         console.log('')
         return {
           id: e.payload.doc.id,
