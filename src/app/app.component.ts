@@ -10,8 +10,8 @@ import { Location } from './location.model';
 })
 export class AppComponent implements OnInit {
   title = 'location-tracker';
-  lat: number = 6.799154;
-  lng: number = 79.9;
+  lat: number = 0;
+  lng: number = 0;
   date: string = "";
   time: string = "";
 
@@ -27,6 +27,10 @@ export class AppComponent implements OnInit {
       this.locations = data.map(e => {
         this.time = e.payload.doc.data()["time"];
         this.date = e.payload.doc.data()["date"];
+        this.lat = e.payload.doc.data()[0];
+        this.lng = e.payload.doc.data()[1];
+        var d = new Date(this.date +'T'+ this.time + 'Z');
+        console.log('')
         return {
           id: e.payload.doc.id,
           latitude : e.payload.doc.data()[0],
